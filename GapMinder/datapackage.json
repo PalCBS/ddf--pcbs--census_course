@@ -1,0 +1,157 @@
+{
+  "name": "GapMinder",
+  "title": "GapMinder",
+  "description": "",
+  "version": "0.0.1",
+  "language": {
+    "id": "en",
+    "name": "English"
+  },
+  "translations": [],
+  "license": "",
+  "author": "",
+  "resources": [
+    {
+      "path": "ddf--concepts.csv",
+      "name": "ddf--concepts",
+      "schema": {
+        "fields": [
+          {
+            "name": "concept"
+          },
+          {
+            "name": "concept_type"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "description"
+          }
+        ],
+        "primaryKey": "concept"
+      }
+    },
+    {
+      "path": "ddf--datapoints--hhs--by--governorate--year.csv",
+      "name": "hhs--by--governorate--year",
+      "schema": {
+        "fields": [
+          {
+            "name": "governorate"
+          },
+          {
+            "name": "year"
+          },
+          {
+            "name": "hhs"
+          }
+        ],
+        "primaryKey": [
+          "governorate",
+          "year"
+        ]
+      }
+    },
+    {
+      "path": "ddf--datapoints--illitracy--by--governorate--year.csv",
+      "name": "illitracy--by--governorate--year",
+      "schema": {
+        "fields": [
+          {
+            "name": "governorate"
+          },
+          {
+            "name": "year"
+          },
+          {
+            "name": "illitracy"
+          }
+        ],
+        "primaryKey": [
+          "governorate",
+          "year"
+        ]
+      }
+    },
+    {
+      "path": "ddf--entities--governorate.csv",
+      "name": "governorate",
+      "schema": {
+        "fields": [
+          {
+            "name": "governorate"
+          },
+          {
+            "name": "governorates"
+          }
+        ],
+        "primaryKey": "governorate"
+      }
+    }
+  ],
+  "ddfSchema": {
+    "datapoints": [
+      {
+        "primaryKey": [
+          "governorate",
+          "year"
+        ],
+        "value": "hhs",
+        "resources": [
+          "hhs--by--governorate--year"
+        ]
+      },
+      {
+        "primaryKey": [
+          "governorate",
+          "year"
+        ],
+        "value": "illitracy",
+        "resources": [
+          "illitracy--by--governorate--year"
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "primaryKey": [
+          "governorate"
+        ],
+        "value": "governorates",
+        "resources": [
+          "governorate"
+        ]
+      }
+    ],
+    "concepts": [
+      {
+        "primaryKey": [
+          "concept"
+        ],
+        "value": "concept_type",
+        "resources": [
+          "ddf--concepts"
+        ]
+      },
+      {
+        "primaryKey": [
+          "concept"
+        ],
+        "value": "description",
+        "resources": [
+          "ddf--concepts"
+        ]
+      },
+      {
+        "primaryKey": [
+          "concept"
+        ],
+        "value": "name",
+        "resources": [
+          "ddf--concepts"
+        ]
+      }
+    ]
+  }
+}

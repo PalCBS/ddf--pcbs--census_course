@@ -1,0 +1,8 @@
+concept,concept_type,name,description
+governorate,entity_domain,Governorate,
+year,time,Year,Calender Year
+illitracy,measure,Illitracy Rate,Illitracy Rate
+hhs,measure,Household Size,Household Size
+governorates,string,Governorate name,Governorate name
+description,string,description,description
+name,string,Name,Name
